@@ -1,13 +1,10 @@
-const notes = ('../notes/notes.html');
-const db = ('../../../db/db.json');
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === notes) {
+if (window.location.pathname === './notes.html') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -29,7 +26,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch(db, {
+  fetch('../../../db/db.json/api/notes', {
     method: 'GET',
     headers: {
       'db.json': 'notes',
@@ -37,7 +34,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch(db, {
+  fetch('../../../db/db.json/api/notes', {
     method: 'POST',
     headers: {
       'db.json': 'notes',
@@ -46,7 +43,7 @@ const saveNote = (note) =>
   });
 
 const deleteNote = (id) =>
-  fetch(`../../../db/db.json${id}`, {
+  fetch(`../../../db/db.json/api/notes${id}`, {
     method: 'DELETE',
     headers: {
       'db.json': 'notes',
@@ -120,7 +117,7 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-  if (window.location.pathname === notes) {
+  if (window.location.pathname === './notes.html') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 
@@ -165,7 +162,7 @@ const renderNoteList = async (notes) => {
     noteListItems.push(li);
   });
 
-  if (window.location.pathname === notes) {
+  if (window.location.pathname === './notes.html') {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
@@ -173,7 +170,7 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-if (window.location.pathname === notes) {
+if (window.location.pathname === './notes.html') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
