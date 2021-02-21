@@ -10,10 +10,16 @@
 
 ## Languages Used
 
-* The Primary Language that was used is express.js
-* Other languages used:
 * Javascript (used for Jquery and more)
-* Node.js (used for downloading Jest, uuidv4, Express.js and Heroku
+
+### Runtime environment
+
+* Node.js (used for downloading Jest, uuidv4, Express.js and Heroku)
+
+#### Components
+
+* The primary component that was used is Express.js
+* Other Node components that were used:
 * Jest (used for testing)
 * uuidv4 (used for unique id's)
 * Heroku (used for deployed application)
@@ -24,7 +30,6 @@
 
 ### Public Folders
 
-* Contains db/db.json (used to save the notes)
 * Includes index.html (for the front page of the site)
 * Also includes notes.html (where you write the notes)
 
@@ -36,6 +41,7 @@
 
 * Contains index.js (Links the other pages and holds their functionalities)
 
-### Server.js
+### Open files/folders
 
 * Holds the other functions of the code that the index.js doesn't have (id's and such)
+* Contains db/db.json (used to save the notes)
