@@ -59,7 +59,7 @@ app.post('/api/notes', (req, res) => {
 app.delete('/api/notes/:id', (req, res) => {
     const deleteNote = req.params.id;
 
-    deleteNote.id = uuidv4;
+    deleteNote.id = uuidv4();
     console.log(deleteNote);
     fs.readFile('./Develop/db/db.json', 'utf8', (err, data) => {
         if (err) {
@@ -68,7 +68,7 @@ app.delete('/api/notes/:id', (req, res) => {
         const notes = JSON.parse(data)
 
         for (var i = 0; i < data.length; i++) {
-            if (data[i].id == req.params.id) {
+            if (data[i].id == deleteNote) {
                 notes.splice(i, 1);
                 break;
             }
@@ -82,7 +82,7 @@ app.delete('/api/notes/:id', (req, res) => {
         })
     })
 
-    console.log(req.params.id);
+    console.log(deleteNote);
 
 })
 
