@@ -3,6 +3,11 @@
 ![Note Taker screenshot](https://user-images.githubusercontent.com/74930599/108614930-f4a66400-73cc-11eb-998a-7c852b11b159.png)
 [Note Taker](https://peaceful-everglades-47355.herokuapp.com/)
 
+## About Note Taker
+
+* Note Taker is an application that utilizes a db.json(Database) to keep an object of whatever is created inside the Note Taker.
+* It also utilizes Javascript files to identify, save and get rid of notes with click functions, delete buttons, save buttons and much more.
+
 ## Languages Used
 
 * The Primary Language that was used is express.js
@@ -17,12 +22,9 @@
 
 * The files and their uses
 
-### Develop Folder
+### Public Folders
 
 * Contains db/db.json (used to save the notes)
-
-### Public Folder
-
 * Includes index.html (for the front page of the site)
 * Also includes notes.html (where you write the notes)
 
