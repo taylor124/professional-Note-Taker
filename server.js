@@ -58,6 +58,9 @@ app.post('/api/notes', (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
     const deleteNote = req.params.id;
+    
+    deleteNote.id = uuidv4;
+    console.log(deleteNote);
     fs.readFile('./Develop/db/db.json', 'utf8', (err, data) => {
         if (err) {
             throw err;
@@ -65,13 +68,12 @@ app.delete('/api/notes/:id', (req, res) => {
         const notes = JSON.parse(data)
 
         for (var i = 0; i < data.length; i++) {
-            if (data[i].id == id) {
+            if (data[i].id == req.params.id) {
                 data.splice(i, 1);
                 break;
             }
         }
         console.log(notes);
-        notes.push(newNote)
         fs.writeFile('./Develop/db/db.json', JSON.stringify(notes), (err) => {
             if (err) {
                 throw err;
