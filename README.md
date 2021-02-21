@@ -1,5 +1,6 @@
 # Note Taker Application
 
+![Note Taker screenshot](https://user-images.githubusercontent.com/74930599/108614930-f4a66400-73cc-11eb-998a-7c852b11b159.png)
 [Note Taker](https://peaceful-everglades-47355.herokuapp.com/)
 
 ## Languages Used
